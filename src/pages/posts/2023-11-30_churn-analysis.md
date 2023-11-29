@@ -1,7 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'My First Blog Post'
+title: 'Top: Churn Analysis'
 when: '2018 - Present'
+date: 2023-11-30
 tags: ["work"]
 type: "work"
 ---
