@@ -1,19 +1,34 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'My First Blog Post'
-pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
-image:
-    url: 'https://images.unsplash.com/photo-1701137045481-7ab453f87b9e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    alt: 'Japanese Coffee Shop'
-tags: ["astro", "blogging", "learning in public"]
+title: 'Most Recent'
+when: '2018 - Present'
+tags: ["work"]
+type: "work"
 ---
 # My First Blog Post
 
 Published on: 2022-07-01
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+
+```sql
+select FirstTime,
+    count(
+        case
+            when Churned = 1 then HouseholdID
+        end
+    ) as ChurnedHouseholds,
+    count(HouseholdID) as TotalHouseholds,
+    count(
+        case
+            when Churned = 1 then HouseholdID
+        end
+    ) / cast(count(HouseholdID) as float) as ChurnRate,
+from
+    ChurnAnalysis
+group by
+    FirstTime
+```
 
 ## What I've accomplished
 

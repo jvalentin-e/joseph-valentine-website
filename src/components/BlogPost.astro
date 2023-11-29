@@ -1,5 +1,14 @@
 ---
-const { url, title } = Astro.props;
+import Arrow from "./icons/Arrow.astro";
+
+const { url, title, when } = Astro.props;
 ---
 
-<li><a href={url}>{title}</a></li>
+<a
+  href={url}
+  class="border-b border-fitzgerald-300 py-10 flex items-center space-x-4"
+>
+  <span class="text-3xl">{title}</span>
+  <span class="font-mono uppercase">{when}</span>
+  <Arrow customClasses="w-6 h-6" />
+</a>

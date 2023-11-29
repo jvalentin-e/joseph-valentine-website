@@ -1,19 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { Image } from "astro:assets";
-import myImage from "../assets/img/viktor-forgacs-O0e934b8JBs-unsplash.jpg"; // Image is 1600x900
+import BlogPost from "../components/BlogPost.astro"
+
+const allPosts = await Astro.glob("../pages/posts/*.md");
 
 const pageTitle = "Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
-
-  <Image
-    src={myImage}
-    width="600"
-    densities={[1.5, 2]}
-    alt="A description of my image."
-  />
+  <ul>
+    {
+      allPosts.map((post) => (
+        <BlogPost url={post.url} title={post.frontmatter.title} when={post.frontmatter.when} />
+      ))
+    }
+  </ul>
 </BaseLayout>
