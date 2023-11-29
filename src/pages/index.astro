@@ -1,19 +1,19 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 
+import { Image } from "astro:assets";
+import myImage from "../assets/img/viktor-forgacs-O0e934b8JBs-unsplash.jpg"; // Image is 1600x900
+
+const pageTitle = "Home Page";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-	<a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    <h1 class="text-red-500">My Astro Site</h1>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My awesome blog subtitle</h2>
+
+  <Image
+    src={myImage}
+    width="600"
+    densities={[1.5, 2]}
+    alt="A description of my image."
+  />
+</BaseLayout>
